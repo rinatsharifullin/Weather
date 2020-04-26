@@ -9,12 +9,12 @@ $(document).ready(function(){
 
 // Get your location and weather
 function getWeather(){
-    var getIP = 'http://ip-api.com/json/';
+    var getIP = 'https://api.ipdata.co/?api-key=f6933ff939575802628ae459468bfa7f884b996d05cae7a8e9995188';
     var openWeatherMap = 'https://api.openweathermap.org/data/2.5/weather'
     $.getJSON(getIP).done(function(location) {
         $.getJSON(openWeatherMap, {
-            lat: location.lat,
-            lon: location.lon,
+            lat: location.latitude,
+            lon: location.longitude,
             units: 'metric',
             APPID: 'f0c85a8c7a8cf2de24a5653f555cd7e4'
         }).done(function(result) {
